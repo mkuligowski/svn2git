@@ -201,13 +201,13 @@ module Svn2Git
         if nominimizeurl
           cmd += "--no-minimize-url "
         end
-        cmd += "--trunk='#{trunk}' " unless trunk.nil?
+        cmd += "--trunk=#{trunk} " unless trunk.nil?
         unless tags.nil?
           # Fill default tags here so that they can be filtered later
           tags = ['tags'] if tags.empty?
           # Process default or user-supplied tags
           tags.each do |tag|
-            cmd += "--tags='#{tag}' "
+            cmd += "--tags=#{tag} "
           end
         end
         unless branches.nil?
@@ -215,7 +215,7 @@ module Svn2Git
           branches = ['branches'] if branches.empty?
           # Process default or user-supplied branches
           branches.each do |branch|
-            cmd += "--branches='#{branch}' "
+            cmd += "--branches=#{branch} "
           end
         end
 
